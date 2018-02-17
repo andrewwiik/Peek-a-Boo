@@ -1,9 +1,9 @@
 Package: com.ioscreatix.peek-a-boo
 Name: Peek-a-Boo
 Depends: mobilesubstrate
-Version: 0.0.1
+Version: 11.0.0
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: 3D Touch on Non-3D-Touch Devices
 Maintainer: iOS Creatix
 Author: iOS Creatix
 Section: Tweaks
