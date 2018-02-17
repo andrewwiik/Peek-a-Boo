@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>General</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ioscreatix.peek-a-boo</string>
+			<key>PostNotification</key>
+			<string>com.ioscreatix.peek-a-boo.prefschanged</string>
+			<key>key</key>
+			<string>Enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Force Sensitivity:</string>
+			<key>footerText</key>
+			<string>The sensitivity of the force calculator, higher means easy to force touch</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>defaults</key>
+			<string>com.ioscreatix.peek-a-boo</string>
+			<key>PostNotification</key>
+			<string>com.ioscreatix.peek-a-boo.prefschanged</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.1</real>
+			<key>max</key>
+			<real>2</real>
+			<key>showValue</key>
+			<true/>
+			<key>key</key>
+			<string>forceSensitivity</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Haptic Feedback</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ioscreatix.peek-a-boo</string>
+			<key>PostNotification</key>
+			<string>com.ioscreatix.peek-a-boo.prefschanged</string>
+			<key>key</key>
+			<string>hapticOnPeek</string>
+			<key>label</key>
+			<string>On Peek</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ioscreatix.peek-a-boo</string>
+			<key>PostNotification</key>
+			<string>com.ioscreatix.peek-a-boo.prefschanged</string>
+			<key>key</key>
+			<string>hapticOnPeek</string>
+			<key>label</key>
+			<string>On Pop</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Haptic Feedback Length</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<integer>20</integer>
+			<key>min</key>
+			<integer>20</integer>
+			<key>max</key>
+			<integer>100</integer>
+			<key>showValue</key>
+			<true/>
+			<key>key</key>
+			<string>hapticLength</string>
+			<key>label</key>
+			<string>Vibration length</string>
+			<key>defaults</key>
+			<string>com.ioscreatix.peek-a-boo</string>
+			<key>PostNotification</key>
+			<string>com.ioscreatix.peek-a-boo.prefschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>respring</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Peek-a-Boo</string>
+</dict>
+</plist>
