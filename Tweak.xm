@@ -154,7 +154,7 @@ void hapticPopVibe(){
                     CGFloat qualityValue = (lastQuality * FIRST_HALF) + (touchQuality*(3 * SENSITIVITY) * (1.1 - FIRST_HALF));
                     CGFloat radiusValue = (lastRadius * FIRST_HALF) + (touchRadius*(2.6 * SENSITIVITY) * (1.0 - FIRST_HALF));
 
-                    pressure = (((((CGFloat)100*qualityValue)+((CGFloat)100*densityValue))/1.4)*(radiusValue+1))/14;
+                    pressure = (((((((CGFloat)100*qualityValue)+((CGFloat)100*densityValue))/1.4)*(radiusValue+1))/14)*SENSITIVITY);
 
                     lastQuality = qualityValue;
                     lastDensity = densityValue;
@@ -343,8 +343,16 @@ static void reloadPrefs() {
     }
 }
 
+@interface UIDevice (priv)
+- (BOOL)_supportsForceTouch;
+@end
+
 
 %ctor {
+
+    if ([[UIDevice currentDevice] _supportsForceTouch]) {
+        return;
+    }
     reloadPrefs();
 
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL,
