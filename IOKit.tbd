@@ -1,5 +1,5 @@
 ---
-archs:           [ armv7, armv7s, arm64 ]
+archs:           [ armv7, armv7s, arm64, arm64e ]
 platform:        ios
 install-name:    /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 current-version: 275.0
@@ -47,7 +47,7 @@ exports:
                        _io_service_match_property_table_ool, _io_service_open_extended, 
                        _io_service_request_probe, _io_service_set_authorization_id, 
                        _io_service_wait_quiet ]
-  - archs:           [ armv7, armv7s, arm64 ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
     symbols:         [ _IOAVAudioFormatTypeString, _IOAVAudioGetChannelAllocation, 
                        _IOAVAudioGetChannelAllocationDefault, _IOAVAudioGetChannelLayoutData, 
                        _IOAVAudioGetSpeakerAllocationMask, _IOAVAudioInterfaceCopyChannelLayoutElements, 
