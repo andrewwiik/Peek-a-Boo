@@ -4,6 +4,7 @@
 #include <IOKit/hid/IOHIDEventSystemClient.h>
 #include <stdio.h>
 #include <dlfcn.h>
+#include <sys/sysctl.h>
 
 static CGFloat SENSITIVITY = 1.0;
 CGFloat FIRST_HALF = 0.35;
@@ -347,6 +348,19 @@ static void reloadPrefs() {
 - (BOOL)_supportsForceTouch;
 @end
 
+static NSString * machineModel() {
+    static dispatch_once_t one;
+    static NSString *model;
+    dispatch_once(&one, ^{
+        size_t size;
+        sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+        void *machine = malloc(size);
+        sysctlbyname("hw.machine", machine, &size, NULL, 0);
+        model = [NSString stringWithUTF8String:(const char *)machine];
+        free(machine);
+    });
+    return model;
+}
 
 %ctor {
 
@@ -359,5 +373,8 @@ static void reloadPrefs() {
         (CFNotificationCallback)reloadPrefs,
         CFSTR("com.creatix.peek-a-boo.prefschanged"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
     %init;
-    %init(Haptics);
+    
+    if (![machineModel() isEqualToString:@"iPhone11,8"]) {
+        %init(Haptics);
+    }
 }
