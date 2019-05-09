@@ -3,6 +3,8 @@ CFLAGS = -fobjc-arc
 ADDITIONAL_OBJCFLAGS = -fobjc-arc
 include $(THEOS)/makefiles/common.mk
 
+ARCHS = armv7 arm64 arm64e
+
 BUNDLE_NAME = PeekaBoo
 PeekaBoo_FILES = PABRootListController.m PABAppSettingsController.m OrderedDictionary.m
 PeekaBoo_INSTALL_PATH = /Library/PreferenceBundles
